@@ -1,0 +1,24 @@
+{
+    "name": "GPUI.Editor",
+    "rootNamespace": "GPUI.Editor",
+    "references": [
+        "GUID:8fb08e7841c7d9841a1a5e2477723e4b",
+        "GUID:5cb2ec59697a4f9438a8f30dc412b4a9",
+        "GUID:6ec20d7bf46e38347a93da7ecf751332"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.red.gpui-system",
+            "expression": "0.0.0",
+            "define": "1.1.35-Pre-Release"
+        }
+    ],
+    "noEngineReferences": false
+}

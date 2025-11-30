@@ -1,0 +1,235 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1275648778921539363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7880386386116218264}
+  - component: {fileID: 3770573419860710218}
+  - component: {fileID: 4686305730190965583}
+  - component: {fileID: 3329630150100285429}
+  - component: {fileID: 8356836242226732538}
+  - component: {fileID: 3998565250886770476}
+  m_Layer: 0
+  m_Name: PRF_UI_Generic_PixelLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7880386386116218264
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275648778921539363}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &3770573419860710218
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275648778921539363}
+  m_CullTransparentMesh: 1
+--- !u!114 &4686305730190965583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275648778921539363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 228d07dbb186d47959b9badfdeaac2eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8941177, g: 0.12941177, b: 0.10980393, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  LineWeight: 1
+  SnappedProperties:
+    Orientation: 0
+    Position: 0
+--- !u!114 &3329630150100285429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275648778921539363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c63585543be83d498b692bdc3de6870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: setActiveAnimation
+      Entry: 7
+      Data: 0|UiAnimationData, Assembly-CSharp
+    - Name: trigger
+      Entry: 6
+      Data: 
+    - Name: playOnAwake
+      Entry: 5
+      Data: false
+    - Name: loop
+      Entry: 5
+      Data: false
+    - Name: loopType
+      Entry: 3
+      Data: 0
+    - Name: easeType
+      Entry: 3
+      Data: 0
+    - Name: targetGraphics
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[UnityEngine.UI.Graphic, UnityEngine.UI]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: animation
+      Entry: 7
+      Data: 2|UiAnimationBase, Assembly-CSharp
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: setInactiveAnimation
+      Entry: 7
+      Data: 3|UiAnimationData, Assembly-CSharp
+    - Name: trigger
+      Entry: 6
+      Data: 
+    - Name: playOnAwake
+      Entry: 5
+      Data: false
+    - Name: loop
+      Entry: 5
+      Data: false
+    - Name: loopType
+      Entry: 3
+      Data: 0
+    - Name: easeType
+      Entry: 3
+      Data: 0
+    - Name: targetGraphics
+      Entry: 7
+      Data: 4|System.Collections.Generic.List`1[[UnityEngine.UI.Graphic, UnityEngine.UI]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: animation
+      Entry: 7
+      Data: 5|UiAnimationBase, Assembly-CSharp
+    - Name: duration
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  canvasGroup: {fileID: 0}
+  skinData: {fileID: 0}
+  skinDataIdentifier: 
+  backgroundGraphic: {fileID: 0}
+  setActiveAnimation:
+    trigger: 
+    playOnAwake: 0
+    loop: 0
+    loopType: 0
+    easeType: 0
+    targetGraphics: []
+    animation:
+      duration: 0
+  setInactiveAnimation:
+    trigger: 
+    playOnAwake: 0
+    loop: 0
+    loopType: 0
+    easeType: 0
+    targetGraphics: []
+    animation:
+      duration: 0
+--- !u!225 &8356836242226732538
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275648778921539363}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &3998565250886770476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275648778921539363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1

@@ -1,0 +1,36 @@
+{
+  "name": "com.red.gpui-system",
+  "version": "2.0.5-Pre-Release",
+  "displayName": "GPUI-System",
+  "type": "tool",
+  "unity": "2022.3",
+  "hideInEditor": false,
+  "keywords": [
+    "GPUI",
+    "UI"
+  ],
+  "author": {
+    "name": "Niko \"Red\" Becker"
+  },
+  "dependencies": {
+    "com.unity.burst": "1.6.0",
+    "com.unity.collections": "1.5.1",
+    "com.unity.mathematics": "1.0.1",
+    "com.unity.ugui": "2.0.0",
+    "com.hextantstudios.utilities": "https://github.com/hextantstudios/com.hextantstudios.utilities.git",
+    "com.annulusgames.lit-motion": "https://github.com/annulusgames/LitMotion.git?path=src/LitMotion/Assets/LitMotion",
+    "com.unity.vectorgraphics": "2.0.0-preview.25"
+  },
+  "samples": [
+    {
+      "displayName": "Base Content",
+      "description": "Contains base prefabs + skins",
+      "path": "Samples~/Base"
+    },
+    {
+      "displayName": "Icons",
+      "description": "Contains FluentUI Icons. Roughly 5000 Icons, this will take some time to import!",
+      "path": "Samples~/Icons"
+    }
+  ]
+}
