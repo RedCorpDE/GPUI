@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+/*#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -56,3 +56,4 @@ namespace GPUI.Editor
     }
 }
 #endif
+*/
