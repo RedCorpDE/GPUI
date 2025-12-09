@@ -26,10 +26,13 @@ namespace GPUI
         [TabGroup("Tabs", "UI Elements")] 
         public LocalizedString windowTitleText;
         
-        
         [TabGroup("Tabs", "UI Skin", SdfIconType.FileEarmarkMedical)]
         [AssetSelector(Paths = "Assets/Content/GUI/Styles/")]
         public SimpleComponentSkinDataObject titleSkinDataObject;
+        
+        [TabGroup("Tabs", "Settings")]
+        
+        
         
         #region Unity Lifecycle
 
@@ -217,15 +220,54 @@ namespace GPUI
         
         public override void FadeElement(bool fadeIn = false)
         {
-
+            
             base.FadeElement(fadeIn);
+
+            if (fadeIn)
+            {
+
+                if (setActiveAnimation == null || setActiveAnimation.animation.GetType() == typeof(UiAnimationBase))
+                {
+
+                    LMotion.Create(canvasGroup.alpha, 1f, .5f)
+                        .WithOnComplete(() =>
+                        {
+                            canvasGroup.blocksRaycasts = true;
+                            canvasGroup.interactable = true;
+                        })
+                        .BindToAlpha(canvasGroup);
+                    
+                }
+                else
+                    setActiveAnimation.Play();
+
+            }
+            else
+            {
+
+                if (setInactiveAnimation == null || setInactiveAnimation.animation.GetType() == typeof(UiAnimationBase))
+                {
+
+                    LMotion.Create(canvasGroup.alpha, 0f, .5f)
+                        .WithOnComplete(() =>
+                        {
+                            canvasGroup.blocksRaycasts = false;
+                            canvasGroup.interactable = false;
+                        })
+                        .BindToAlpha(canvasGroup);
+
+                }
+                else
+                    setInactiveAnimation.Play();
+
+            }
 
         }
 
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             
-            base.OnPointerClick(eventData);
+            base.OnPointerUp(eventData);
             
         }
 

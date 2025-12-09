@@ -172,10 +172,10 @@ namespace GPUI
 
         }
 
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             
-            base.OnPointerClick(eventData);
+            base.OnPointerUp(eventData);
             
         }
 

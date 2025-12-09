@@ -137,7 +137,7 @@ namespace GPUI
 
         }
 
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             
             if (eventData.button != PointerEventData.InputButton.Left)
@@ -148,7 +148,7 @@ namespace GPUI
 
             HandleClickBehavior();
 
-            base.OnPointerClick(eventData);
+            base.OnPointerUp(eventData);
             
         }
 

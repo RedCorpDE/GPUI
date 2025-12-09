@@ -344,7 +344,7 @@ namespace GPUI
 
         }
 
-        public virtual void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             
             if (!IsActive() || !IsInteractable()) 

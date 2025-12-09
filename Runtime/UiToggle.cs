@@ -198,7 +198,7 @@ namespace GPUI
 
         }
 
-        public override void OnPointerClick(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
             
             if (eventData.button != PointerEventData.InputButton.Left)
@@ -210,7 +210,7 @@ namespace GPUI
             Toggle();
 
             // Let Selectable handle state transitions, etc.
-            base.OnPointerClick(eventData);
+            base.OnPointerUp(eventData);
             
         }
 
