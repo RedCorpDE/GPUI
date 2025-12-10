@@ -61,6 +61,7 @@ namespace GPUI
         
         #region Unity Lifecycle
 
+#if UNITY_EDITOR
         protected override void Reset()
         {
             
@@ -69,6 +70,7 @@ namespace GPUI
             CacheComponents();
             
         }
+#endif
 
         protected override void Awake()
         {
@@ -108,7 +110,7 @@ namespace GPUI
             DoStateTransition(currentSelectionState, true);
             
         }
-        
+
         protected override void OnDisable()
         {
             

@@ -77,12 +77,15 @@ namespace GPUI
 
         #region Unity Lifecycle
 
+#if UNITY_EDITOR
         protected override void Reset()
         {
             
             base.Reset();
             
+            
         }
+#endif
 
         protected override void Awake()
         {
