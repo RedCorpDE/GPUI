@@ -157,11 +157,7 @@ namespace GPUI
                     break;
             }
 
-            if (detailGraphic is Image)
-            {
-                (detailGraphic as Image).color = targetDetailColor;
-                
-            }
+            detailGraphic.color = targetDetailColor;
         }
         
         #endregion

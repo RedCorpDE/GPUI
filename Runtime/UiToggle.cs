@@ -187,7 +187,117 @@ namespace GPUI
         {
             
             base.DoStateTransition(state, instant);
+
+            if (skinData == null)
+                return;
             
+            Color targetBackgroundColor = (skinData as ComponentSkinDataObject).backgroundColor.normalColor;
+            Color targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.normalColor;
+
+            if (skinData is UiToggleSkinDataObject)
+            {
+                
+                switch (state)
+                {
+                    case SelectionState.Normal:
+
+                        if (isOn)
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).pressedBackgroundColor.normalColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).pressedDetailColor.normalColor;
+                        }
+                        else
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).backgroundColor.normalColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).detailColor.normalColor;
+                        }
+                        
+                        break;
+                    case SelectionState.Highlighted:
+                        
+                        if (isOn)
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).pressedBackgroundColor.highlightedColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).pressedDetailColor.highlightedColor;
+                        }
+                        else
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).backgroundColor.highlightedColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).detailColor.highlightedColor;
+                        }
+                        
+                        break;
+                    case SelectionState.Pressed:
+                        
+                        if (isOn)
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).pressedBackgroundColor.pressedColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).pressedDetailColor.pressedColor;
+                        }
+                        else
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).backgroundColor.pressedColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).detailColor.pressedColor;
+                        }
+                        
+                        break;
+                    case SelectionState.Selected:
+                        
+                        if (isOn)
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).pressedBackgroundColor.selectedColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).pressedDetailColor.selectedColor;
+                        }
+                        else
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).backgroundColor.selectedColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).detailColor.selectedColor;
+                        }
+                        
+                        break;
+                    case SelectionState.Disabled:
+                        
+                        if (isOn)
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).pressedBackgroundColor.disabledColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).pressedDetailColor.disabledColor;
+                        }
+                        else
+                        {
+                            targetBackgroundColor = (skinData as UiToggleSkinDataObject).backgroundColor.disabledColor;
+                            targetDetailColor = (skinData as UiToggleSkinDataObject).detailColor.disabledColor;
+                        }
+                        
+                        break;
+                }
+                
+            }
+            else
+            {
+                
+                switch (state)
+                {
+                    case SelectionState.Normal:
+                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.normalColor;
+                        break;
+                    case SelectionState.Highlighted:
+                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.highlightedColor;
+                        break;
+                    case SelectionState.Pressed:
+                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.pressedColor;
+                        break;
+                    case SelectionState.Selected:
+                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.selectedColor;
+                        break;
+                    case SelectionState.Disabled:
+                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.disabledColor;
+                        break;
+                }
+                
+            }
+
+            backgroundGraphic.color = targetBackgroundColor;
+            detailGraphic.color = targetDetailColor;
         }
         
         #endregion
