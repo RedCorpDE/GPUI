@@ -389,6 +389,7 @@ namespace GPUI
             }
 
             UpdateVisualState();
+            DoStateTransition(currentSelectionState, false);
 
             // If we just turned ON, tell our group.
             if (isOn && toggleGroup != null)
