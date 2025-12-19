@@ -109,6 +109,8 @@ namespace GPUI
             if (toggleGroup != null && isOn)
                 toggleGroup.NotifyToggleOn(this);
             
+            DoStateTransition(currentSelectionState, true);
+            
         }
 
         protected override void OnDisable()
