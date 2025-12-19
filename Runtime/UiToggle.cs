@@ -186,7 +186,7 @@ namespace GPUI
         protected override void DoStateTransition(SelectionState state, bool instant)
         {
             
-            base.DoStateTransition(state, instant);
+            //base.DoStateTransition(state, instant);
 
             if (skinData == null)
                 return;
