@@ -150,8 +150,6 @@ namespace GPUI
                 return;
 
             HandleClickBehavior();
-
-            base.OnPointerUp(eventData);
             
         }
 
