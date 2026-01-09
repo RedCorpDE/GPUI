@@ -17,19 +17,14 @@ namespace GPUI
     /// Custom Element for Windows and base for complex elements like modals. 
     /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
-    public class UiWindowModal : UiElement
+    public class UiWindowModal : UiWindow
     {
 
         [TabGroup("Tabs", "UI Elements")] 
-        public UiText windowTitle;
+        public UiButton closeButton;
         
-        [TabGroup("Tabs", "UI Elements")] 
-        public LocalizedString windowTitleText;
-        
-        
-        [TabGroup("Tabs", "UI Skin", SdfIconType.FileEarmarkMedical)]
-        [AssetSelector(Paths = "Assets/Content/GUI/Styles/")]
-        public SimpleComponentSkinDataObject titleSkinDataObject;
+        [TabGroup("Events", "OnCloseButton")]
+        public UnityEvent onCloseButton;
         
         #region Unity Lifecycle
 
@@ -54,6 +49,19 @@ namespace GPUI
         {
             
             base.OnEnable();
+            
+            onCloseButton.AddListener(() =>
+            {
+
+                if (UiManager.Instance != null && useManagerForClosing)
+                    UiManager.Instance.GoToLastWindow();
+                else if (UiManager.Instance == null || !useManagerForClosing)
+                    FadeElement();
+
+
+            });
+
+            closeButton?.onClick?.AddListener(() => onCloseButton?.Invoke());
             
         }
         
@@ -106,22 +114,29 @@ namespace GPUI
             if (skinData == null)
                 return;
 
-            if (windowTitle != null)
+            if (closeButton != null)
             {
                 
-                windowTitle.LocalizedString = windowTitleText;
-
-                if (titleSkinDataObject == null && skinData is ComponentSkinDataObject)
+                if (skinData is UiWindowModalSkinDataObject)
                 {
-                    
-                    windowTitle.backgroundGraphic.color = (skinData as ComponentSkinDataObject).detailColor.normalColor;
+
+                    if ((skinData as UiWindowModalSkinDataObject).windowHeaderSkinData != null)
+                    {
+                        
+                        closeButton.skinData = (skinData as UiWindowModalSkinDataObject).windowHeaderSkinData;
+                        closeButton.ApplySkinData();
+
+                    }
+                    else
+                        closeButton.backgroundGraphic.color = 
+                            (skinData as ComponentSkinDataObject).detailColor.normalColor;
                     
                 }
-                else if (titleSkinDataObject != null)
+                else if (skinData is ComponentSkinDataObject)
                 {
                     
-                    windowTitle.skinData = titleSkinDataObject;
-                    windowTitle.ApplySkinData();
+                    closeButton.backgroundGraphic.color = 
+                        (skinData as ComponentSkinDataObject).detailColor.normalColor;
                     
                 }
 
@@ -156,61 +171,6 @@ namespace GPUI
         {
             
             base.DoStateTransition(state, instant);
-
-            if (skinData == null)
-                return;
-            
-            if(windowTitle == null)
-                return;
-            
-            Color targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.normalColor;
-
-            switch (state)
-            {
-                case SelectionState.Normal:
-                    
-                    if(titleSkinDataObject == null)
-                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.normalColor;
-                    else
-                        targetDetailColor = titleSkinDataObject.backgroundColor.normalColor;
-                    
-                    break;
-                case SelectionState.Highlighted:
-                    
-                    if(titleSkinDataObject == null)
-                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.highlightedColor;
-                    else
-                        targetDetailColor = titleSkinDataObject.backgroundColor.highlightedColor;
-                    
-                    break;
-                case SelectionState.Pressed:
-                    
-                    if(titleSkinDataObject == null)
-                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.pressedColor;
-                    else
-                        targetDetailColor = titleSkinDataObject.backgroundColor.pressedColor;
-                    
-                    break;
-                case SelectionState.Selected:
-                   
-                    if(titleSkinDataObject == null)
-                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.selectedColor;
-                    else
-                        targetDetailColor = titleSkinDataObject.backgroundColor.selectedColor;
-                    
-                    break;
-                case SelectionState.Disabled:
-                    
-                    if(titleSkinDataObject == null)
-                        targetDetailColor = (skinData as ComponentSkinDataObject).detailColor.disabledColor;
-                    else
-                        targetDetailColor = titleSkinDataObject.backgroundColor.disabledColor;
-                    
-                    break;
-            }
-
-            windowTitle.backgroundGraphic.color = targetDetailColor;
-            windowTitle.LocalizedString = windowTitleText;
 
         }
         
