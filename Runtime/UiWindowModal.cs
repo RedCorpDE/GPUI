@@ -120,10 +120,10 @@ namespace GPUI
                 if (skinData is UiWindowModalSkinDataObject)
                 {
 
-                    if ((skinData as UiWindowModalSkinDataObject).windowHeaderSkinData != null)
+                    if ((skinData as UiWindowModalSkinDataObject).closeButtonSkinData != null)
                     {
                         
-                        closeButton.skinData = (skinData as UiWindowModalSkinDataObject).windowHeaderSkinData;
+                        closeButton.skinData = (skinData as UiWindowModalSkinDataObject).closeButtonSkinData;
                         closeButton.ApplySkinData();
 
                     }
