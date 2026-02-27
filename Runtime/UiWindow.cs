@@ -27,6 +27,12 @@ namespace GPUI
         
         [TabGroup("Tabs", "UI Elements")] 
         public LocalizedString windowTitleText;
+
+        [TabGroup("Tabs", "UI Elements")] 
+        public RectTransform windowTitleGroup;
+        
+        [TabGroup("Tabs", "UI Elements")] 
+        public RectTransform windowBody;
         
         [TabGroup("Events", "OnSetActive")]
         public UnityEvent onSetActive;
